@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Test registration",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "register",
+        "phone": "+79001234567",
+        "email": "test@example.com",
+        "password": "password123",
+        "first_name": "Иван",
+        "last_name": "Петров",
+        "birth_date": "1990-01-01"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test login",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "login",
+        "login": "test@example.com",
+        "password": "password123"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
