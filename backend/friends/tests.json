@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Search users",
+      "method": "GET",
+      "path": "/?search=test&user_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "users": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Add friend",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "add",
+        "user_id": 1,
+        "friend_id": 2
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

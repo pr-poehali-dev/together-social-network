@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "Get posts feed",
+      "method": "GET",
+      "path": "/?limit=10",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "posts": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create post",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "create",
+        "user_id": 1,
+        "content": "Test post",
+        "post_type": "text"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
